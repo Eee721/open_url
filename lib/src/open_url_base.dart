@@ -9,7 +9,7 @@ import 'dart:io';
 /// being returned.
 Future<ProcessResult> openUrl(String url , {String? workingDirectory}) {
   if (workingDirectory != null){
-    return Process.run(_command, [url , ""], runInShell: true , workingDirectory: workingDirectory);
+    return Process.run(_command, ["" , url , ""], runInShell: true , workingDirectory: workingDirectory);
   }
   return Process.run(_command, [url], runInShell: true);
 }
