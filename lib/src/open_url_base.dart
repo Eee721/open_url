@@ -7,8 +7,11 @@ import 'dart:io';
 /// The default utility to open URLs for the platform is used.
 /// A process is spawned to run that utility, with the [ProcessResult]
 /// being returned.
-Future<ProcessResult> openUrl(String url) {
-  return Process.run(_command, [url , ""], runInShell: true);
+Future<ProcessResult> openUrl(String url , {String? workingDirectory}) {
+  if (workingDirectory != null){
+    return Process.run(_command, [url , ""], runInShell: true , workingDirectory: workingDirectory);
+  }
+  return Process.run(_command, [url], runInShell: true);
 }
 
 String get _command {
