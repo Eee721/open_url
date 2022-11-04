@@ -8,7 +8,7 @@ import 'dart:io';
 /// A process is spawned to run that utility, with the [ProcessResult]
 /// being returned.
 Future<ProcessResult> openUrl(String url) {
-  return Process.run(_command, [url], runInShell: true);
+  return Process.run(_command, [url , ""], runInShell: true);
 }
 
 String get _command {
