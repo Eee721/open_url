@@ -11,7 +11,7 @@ Future<ProcessResult> openUrl(String url , {String? workingDirectory}) {
   if (workingDirectory != null){
     return Process.run(_command, ["" , url , ""], runInShell: true , workingDirectory: workingDirectory);
   }
-  return Process.run(_command, [url], runInShell: true);
+  return Process.run(_command, ["",url,""], runInShell: true);
 }
 
 String get _command {
